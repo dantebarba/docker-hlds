@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  steamcmd:
+    container_name: steamcmd
+    image: dantebarba/steamcmd-hlds:latest
+    restart: unless-stopped
+    command: ./hlds_run -game cstrike -autoupdate +port 27015 +maxplayers 12 +map de_dust2 +rcon_password 1A2B3C4E +sv_lan 0 +developer 3 +log on +developer 3 +log on +exec server.cfg
+    volumes:
+      - "./server.cfg:/home/steam/hlds/cstrike/server.cfg"
+      - "./rehlds/core.so:/home/steam/hlds/core.so"
+      - "./rehlds/demoplayer.so:/home/steam/hlds/demoplayer.so"
+      - "./rehlds/engine_i486.so:/home/steam/hlds/engine_i486.so"
+      - "./rehlds/filesystem_stdio.so:/home/steam/hlds/filesystem_stdio.so"
+      - "./rehlds/proxy.so:/home/steam/hlds/proxy.so"
+      - "./rehlds/hlds_linux:/home/steam/hlds/hlds_linux"
+      - "./rehlds/hltv:/home/steam/hlds/hltv"
+      - "./rehlds/valve/dlls/director.so:/home/steam/hlds/valve/dlls/director.so"
+      - "./addons:/home/steam/hlds/cstrike/addons"
+      - "./reunion.cfg:/home/steam/hlds/reunion.cfg"
+      - "./liblist.gam:/home/steam/hlds/cstrike/liblist.gam"
+    ports:
+      - 27015:27015/tcp
+      - 27015:27015/udp
