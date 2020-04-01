@@ -19,6 +19,7 @@ services:
       - "./addons:/home/steam/hlds/cstrike/addons"
       - "./reunion.cfg:/home/steam/hlds/reunion.cfg"
       - "./liblist.gam:/home/steam/hlds/cstrike/liblist.gam"
+      - "./mapcycle.txt:/home/steam/hlds/cstrike/mapcycle.txt"
     ports:
       - 27015:27015/tcp
       - 27015:27015/udp
