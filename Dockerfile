@@ -1,4 +1,4 @@
-FROM dantebarba/docker-hlds
+FROM dantebarba/steamcmd-hlds
 
 ADD hlds .
 
