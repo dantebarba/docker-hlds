@@ -1,7 +1,7 @@
 version: '3.3'
 
 services:
-  steamcmd:
+  rehlds:
     container_name: rehlds
     image: dantebarba/steamcmd-rehlds:latest
     restart: unless-stopped
