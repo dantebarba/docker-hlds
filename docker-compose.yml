@@ -3,7 +3,7 @@ version: '2'
 services:
   steamcmd:
     container_name: steamcmd
-    image: dantebarba/steamcmd-hlds:latest
+    image: dantebarba/steamcmd-rehlds:latest
     restart: unless-stopped
     command: ./hlds_run -game cstrike +port 27015 +maxplayers 20 +map de_dust2 +rcon_password ${RCON_PASSWORD} +sv_lan 0 +developer 3 +log on +exec server.cfg
     volumes:
