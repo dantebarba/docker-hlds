@@ -1,4 +1,4 @@
-FROM dantebarba/steamcmd-rehlds
+FROM dantebarba/steamcmd-rehlds-amx
 
 ADD hlds .
 
